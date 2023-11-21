@@ -50,6 +50,7 @@
   <body>
     <div id="main"></div>
     <footer id="footer">
+      <marquee id="marquee"></marquee>
       <a
         class="footer-btn"
         href="https://github.com/baldosa/dias-faltantes"
@@ -81,11 +82,16 @@
       let fromDate = moment("2023-11-19", "YYYY-MM-DD")
       let toDate = moment("2027-12-10", "YYYY-MM-DD")
       let totalDays = toDate.diff(fromDate, "days")
-      let missingDays = toDate.diff(moment(), "days")
+      let missingDays = toDate.diff(moment(), "days") + 1
       let diffDays = totalDays - missingDays
+
       let groupOfFive = Math.floor(diffDays / 5)
       let remainder = diffDays % 5
-      // change title
+      // change title and marquee
+      marquee = document.getElementById("marquee")
+      marquee.innerHTML = `Ya pasaron ${diffDays} d\xEDas y faltan ${missingDays}`
+      console.log(marquee)
+
       document.title = `Ya pasaron ${diffDays} d\xEDas y faltan ${missingDays}`
 
       // draw sticks
