@@ -99,7 +99,8 @@
       function loadImage(size) {
         const newImg = new Image()
         newImg.src = `${size}.png`
-        document.body.appendChild(newImg)
+        mainDiv = document.getElementById("main")
+        mainDiv.appendChild(newImg)
       }
       for (let step = 0; step < groupOfFive; step++) {
         loadImage(5)
