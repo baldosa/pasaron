@@ -87,12 +87,13 @@
 
       let groupOfFive = Math.floor(diffDays / 5)
       let remainder = diffDays % 5
+
+      let msg = `Ya pasaron ${diffDays} d\xEDas y faltan ${missingDays}`
       // change title and marquee
       marquee = document.getElementById("marquee")
-      marquee.innerHTML = `Ya pasaron ${diffDays} d\xEDas y faltan ${missingDays}`
-      console.log(marquee)
+      marquee.innerHTML = msg
 
-      document.title = `Ya pasaron ${diffDays} d\xEDas y faltan ${missingDays}`
+      document.title = msg
 
       // draw sticks
       function loadImage(size) {
