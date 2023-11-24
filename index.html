@@ -105,7 +105,9 @@
       for (let step = 0; step < groupOfFive; step++) {
         loadImage(5)
       }
-      loadImage(remainder)
+      if (remainder > 0) {
+        loadImage(remainder)
+      }
     </script>
     <!-- Google tag (gtag.js) -->
     <script
